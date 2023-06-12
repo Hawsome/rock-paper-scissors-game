@@ -1,0 +1,106 @@
+HTML: 
+
+The code is an HTML template for a Rock Paper Scissors game. Here's an explanation of the different parts:
+
+- `<!DOCTYPE html>`: This is the doctype declaration, which specifies the HTML version being used.
+
+- `<html>`: The opening tag for the HTML document.
+
+- `<head>`: The head section of the HTML document. It contains meta information and references to external resources.
+
+  - `<meta charset="UTF-8">`: Specifies the character encoding of the document as UTF-8, which supports a wide range of characters.
+
+  - `<title>Rock Paper Scissors</title>`: Sets the title of the HTML document, which appears in the browser's title bar or tab.
+
+  - `<link rel="stylesheet" href="styles.css">`: Links an external CSS file named "styles.css" to style the HTML elements.
+
+- `<body>`: The body section of the HTML document. It contains the visible content of the web page.
+
+  - `<h1>Rock Paper Scissors</h1>`: Displays a heading with the text "Rock Paper Scissors".
+
+  - `<div id="profile-form">`: Represents a div container with the ID "profile-form". It contains an input field and a button for the user to enter their name.
+
+  - `<div id="game-container" style="display: none;">`: Represents a div container with the ID "game-container". It is initially hidden using the `display: none;` CSS property. This section contains the game elements such as the scoreboard, choices (rock, paper, scissors), result display, and animation container.
+
+  - `<footer>`: Represents the footer section of the HTML document. It contains copyright information and social media icons.
+
+  - `<script src="https://kit.fontawesome.com/7624c7c0d1.js" crossorigin="anonymous"></script>`: Includes the Font Awesome JavaScript library to enable the use of Font Awesome icons in the document.
+
+  - `<script src="script.js"></script>`: Links an external JavaScript file named "script.js" to provide functionality to the HTML elements.
+
+The provided HTML code sets up the structure and layout of the Rock Paper Scissors game, defines the necessary elements such as buttons, inputs, and containers, and includes references to external resources like CSS and JavaScript files for styling and functionality.
+
+CSS: 
+
+The code is a CSS stylesheet that defines the styling rules for various elements in the Rock Paper Scissors game. Here's an explanation of the different CSS rules:
+
+- `body`: Sets the font family to Arial, sans-serif and aligns the text to the center.
+
+- `h1`: Adds a top margin of 30px to the heading element.
+
+- `#profile-form`: Adds a top margin of 50px to the profile form container.
+
+- `#profile-form label, #profile-form input, #profile-form button`: Adds a margin of 10px to the label, input, and button elements within the profile form.
+
+- `input[type="text"], input[type="number"]`: Styles the text and number input fields with padding, font size, border, border-radius, and transition properties. The focus state changes the border color.
+
+- `.game`: Adds a top margin of 50px to the game section.
+
+- `.scoreboard`: Styles the scoreboard element with font size and bottom margin.
+
+- `.choices`: Displays the choices (rock, paper, scissors) in a flex container with centered alignment and bottom margin.
+
+- `.choice`: Styles the choice buttons with padding, margin, font size, background color, color, border, border-radius, and transition properties. The hover state changes the background color. The disabled state changes the background color and cursor.
+
+- `.result`: Styles the result element with font size and font weight.
+
+- `.start-game`: Styles the start game button with display, padding, font size, background color, color, border, border-radius, cursor, and transition properties. The hover state changes the background color.
+
+- `#animation-container`: Adds a top margin and centers the content within the animation container.
+
+- `.choice-animation`: Applies animation properties to the choice elements for animations during gameplay.
+
+- `@keyframes`: Defines keyframe animations for various elements such as player, rock, paper, scissors, and computer animations.
+
+- `footer`: Styles the footer section with background color, color, padding, text alignment, border-radius, box-shadow, and margin properties.
+
+- `.social-icons`: Adds a top margin to the social icons container.
+
+- `.social-icons a`: Styles the social icons links with display, margin-right, and color properties.
+
+- `.social-icons i`: Styles the social icons with font size and transition property for color.
+
+- `.social-icons a:hover i`: Changes the color of social icons on hover.
+
+- `.social-icons a.linkedin:hover i`: Changes the color of the LinkedIn icon on hover.
+
+- `.social-icons a.twitter:hover i`: Changes the color of the Twitter icon on hover.
+
+- `.social-icons a.email:hover i`: Changes the color of the email icon on hover.
+
+The provided CSS code defines the visual styles and animations for the various elements in the Rock Paper Scissors game, ensuring a visually appealing and engaging user interface.
+
+JavaScript: 
+
+The code is a JavaScript script that handles the game logic and functionality for the Rock Paper Scissors game. Here's an explanation of the different functions and variables:
+
+- `var playerScore = 0;`: Represents the player's score and initializes it to 0.
+- `var computerScore = 0;`: Represents the computer's score and initializes it to 0.
+- `var roundsPlayed = 0;`: Keeps track of the number of rounds played and initializes it to 0.
+- `var playerName = "";`: Stores the player's name and initializes it to an empty string.
+
+- `function startGame()`: This function is called when the "Start Game" button is clicked. It retrieves the player's name from the input field and checks if it is not empty. If the name is valid, it hides the profile form and displays the game container.
+
+- `function playGame(playerChoice)`: This function is called when the player selects a choice (rock, paper, or scissors). It generates a random choice for the computer, compares the player's choice with the computer's choice, and determines the round result. The player and computer scores are updated accordingly, and the scoreboard is updated. The result is displayed, and the choices are animated. The roundsPlayed variable is incremented, and if it reaches 3, the endGame() function is called.
+
+- `function updateScoreboard()`: Updates the player and computer scores on the scoreboard in the HTML document.
+
+- `function showResult(playerChoice, computerChoice, result)`: Displays the player's choice, computer's choice, and round result in the HTML document.
+
+- `function animateChoices(playerChoice, computerChoice)`: Animates the player's and computer's choices by adding appropriate CSS classes to the animationContainer element. After a delay of 1.5 seconds, the animationContainer is cleared.
+
+- `function endGame()`: Displays the final result of the game based on the player and computer scores. If the player has a higher score, they are declared the overall winner. If the computer has a higher score, it is declared the overall winner. If both have the same score, it's declared a tie.
+
+- `function disableChoices()`: Disables the choice buttons by setting the disabled property to true for each button.
+
+The JavaScript code manages the game state, updates the scores and results, and handles the overall game flow, ensuring a functional and interactive Rock Paper Scissors game experience.
