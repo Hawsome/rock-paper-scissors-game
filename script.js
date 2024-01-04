@@ -5,14 +5,21 @@ var playerName = "";
 
 function startGame() {
   playerName = document.getElementById("player-name").value;
-  
+
   if (playerName.trim() === "") {
     alert("Please enter a valid name.");
     return;
   }
-  
+
   document.getElementById("game-container").style.display = "block";
   document.getElementById("profile-form").style.display = "none";
+
+  // Set the player's name in the scoreboard
+  document.getElementById("player-name-display").textContent = playerName;
+  document.getElementById("computer-name-display").textContent = "Computer";
+
+  // Call updateScoreboard after setting the player's name
+  updateScoreboard();
 }
 
 function playGame(playerChoice) {
@@ -46,11 +53,11 @@ function playGame(playerChoice) {
 }
 
 function updateScoreboard() {
-  var playerScoreElement = document.getElementById("player-score");
+  var playerScoreElement = document.getElementById("player-score-display");
   var computerScoreElement = document.getElementById("computer-score");
 
-  playerScoreElement.textContent = playerScore;
-  computerScoreElement.textContent = computerScore;
+  playerScoreElement.textContent = playerName + "'s Score: " + playerScore;
+  computerScoreElement.textContent = "Computer: " + computerScore;
 }
 
 function showResult(playerChoice, computerChoice, result) {
@@ -75,7 +82,7 @@ function animateChoices(playerChoice, computerChoice) {
   computerChoiceElement.classList.add("choice-animation", computerChoice + "-animation");
   animationContainer.appendChild(computerChoiceElement);
 
-  setTimeout(function() {
+  setTimeout(function () {
     animationContainer.innerHTML = "";
   }, 1500);
 }
@@ -98,7 +105,7 @@ function endGame() {
 
 function disableChoices() {
   var choices = document.getElementsByClassName("choice");
-  
+
   for (var i = 0; i < choices.length; i++) {
     choices[i].disabled = true;
   }

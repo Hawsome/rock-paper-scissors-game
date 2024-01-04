@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Rock Paper Scissors</h1>
-  <div id="profile-form">
-    <label for="player-name">Enter your name:</label>
-    <input type="text" id="player-name">
-    <button onclick="startGame()" class="start-game">Start Game</button>
-  </div>
-  <div id="game-container" style="display: none;">
-    <div class="scoreboard">
-      <span id="player-score">0</span> : <span id="computer-score">0</span>
+  <div class="container">
+    <h1>Rock Paper Scissors</h1>
+    <div id="profile-form">
+      <label for="player-name">Enter your name:</label>
+      <input type="text" id="player-name">
+      <button onclick="startGame()" class="start-game">Start Game</button>
     </div>
-    <div class="choices">
+    <div id="game-container" style="display: none;">
+      <div class="scoreboard">
+        <div id="player-score-display"></div>
+        <div id="computer-score-display"><span id="computer-score"></span></div>
+      </div>
+
+      <div class="choices">
         <button class="choice" onclick="playGame('rock')">
           <i class="fas fa-hand-rock"></i> Rock
         </button>
@@ -27,8 +31,9 @@
           <i class="fas fa-hand-scissors"></i> Scissors
         </button>
       </div>
-    <div id="result" class="result"></div>
-    <div id="animation-container"></div>
+      <div id="result" class="result"></div>
+      <div id="animation-container"></div>
+    </div>
   </div>
   <footer>
     <p>&copy; 2023 Olaoluwa Akinfenwa. All rights reserved.</p>
